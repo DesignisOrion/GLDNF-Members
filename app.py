@@ -16,6 +16,11 @@ class User(db.Model):
     location = db.Column(db.String(120), unique=True, nullable=False)
     date_created = db.Column(db.DateTime, default=datetime.utcnow)
 
+
+@app.route('/')
+def home():
+    return 
+
 # adding data to the database
 @app.route('/<username>/<location>')
 def index(username, location):
@@ -23,4 +28,11 @@ def index(username, location):
     db.session.add(new_user)
     db.session.commit()
     
-    return '<h1>User Added Successfully!'
+    return '<h1>User Added Successfully!</h1>'
+
+
+@app.route('/<name>')
+def get_user(name):
+    user = User.query.filter_by(name=name).first()
+
+    return f'<h1>The user is located in: { user.location }<h1>'
