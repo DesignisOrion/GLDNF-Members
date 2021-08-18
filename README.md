@@ -1,6 +1,10 @@
-# Feed My Read App
+# HearSee
 
-Allows a user to keep track of books purchased including date, time and location.
+Users will upload audio file and have speech recognition occur.
+
+# Admin page 
+
+Users registration info database.
 
 ## Usage
 

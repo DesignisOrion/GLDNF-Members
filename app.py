@@ -19,7 +19,7 @@ class User(db.Model):
 
 @app.route('/')
 def home():
-    return 
+    return "Welcome!"
 
 # adding data to the database
 @app.route('/<username>/<location>')
@@ -36,3 +36,5 @@ def get_user(name):
     user = User.query.filter_by(name=name).first()
 
     return f'<h1>The user is located in: { user.location }<h1>'
+
+    
